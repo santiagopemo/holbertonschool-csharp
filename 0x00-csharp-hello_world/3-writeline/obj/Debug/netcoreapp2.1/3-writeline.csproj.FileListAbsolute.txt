@@ -1,0 +1,11 @@
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\bin\Debug\netcoreapp2.1\3-writeline.deps.json
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\bin\Debug\netcoreapp2.1\3-writeline.runtimeconfig.json
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\bin\Debug\netcoreapp2.1\3-writeline.runtimeconfig.dev.json
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\bin\Debug\netcoreapp2.1\3-writeline.dll
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\bin\Debug\netcoreapp2.1\3-writeline.pdb
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\obj\Debug\netcoreapp2.1\3-writeline.csprojAssemblyReference.cache
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\obj\Debug\netcoreapp2.1\3-writeline.csproj.CoreCompileInputs.cache
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\obj\Debug\netcoreapp2.1\3-writeline.AssemblyInfoInputs.cache
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\obj\Debug\netcoreapp2.1\3-writeline.AssemblyInfo.cs
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\obj\Debug\netcoreapp2.1\3-writeline.dll
+C:\Users\Holberton\Desktop\holberton-school\holbertonschool-csharp\3-writeline\obj\Debug\netcoreapp2.1\3-writeline.pdb
