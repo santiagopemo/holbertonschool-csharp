@@ -9,7 +9,7 @@ class MyStack
             Console.WriteLine("Stack is empty");
         else
             Console.WriteLine($"Top item: {aStack.Peek()}");
-        Console.WriteLine("Stack contains {0}: {1}", search, aStack.Contains(search) ? "True" : "False");
+        Console.WriteLine("Stack contains \"{0}\": {1}", search, aStack.Contains(search) ? "True" : "False");
         if (aStack.Contains(search))
         {
             while (aStack.Pop() != search)
