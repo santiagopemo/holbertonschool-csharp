@@ -24,15 +24,7 @@ class LList
                 return tmp;
             }
         }
-        if (n < tmp.Value)
-        {
-            myLList.AddBefore(tmp, n);
-            return tmp.Previous;
-        }            
-        else
-        {
-            myLList.AddLast(n);
-            return myLList.Last;
-        }                    
+        myLList.AddLast(n);
+        return myLList.Last;                    
     }
 }
