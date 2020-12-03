@@ -11,6 +11,11 @@ class LList
             myLList.AddFirst(n);
             return myLList.First;
         }
+        if (n < tmp.Value)
+        {
+            myLList.AddBefore(tmp, n);
+            return tmp.Previous;
+        }      
         for (; tmp.Next != null; tmp = tmp.Next)
         {            
             if (n < tmp.Next.Value && n >= tmp.Value)
