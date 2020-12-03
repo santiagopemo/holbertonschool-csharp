@@ -1,12 +1,21 @@
 ﻿using System;
-
-namespace _10_linkedlist_get_node
+using System.Collections.Generic;
+class LList
 {
-    class Program
+    public static int GetNode(LinkedList<int> myLList, int n)
     {
-        static void Main(string[] args)
+        if (n < 0 || n >= myLList.Count)
+            return 0;
+        int i = 0;
+        foreach (int value in myLList)
         {
-            Console.WriteLine("Hello World!");
+            if (i == n)
+            {
+                i = value;
+                break;
+            }
+            i++;
         }
+        return i;
     }
 }
