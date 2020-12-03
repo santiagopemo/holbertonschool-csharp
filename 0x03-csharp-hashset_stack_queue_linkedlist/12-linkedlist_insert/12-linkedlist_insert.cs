@@ -16,13 +16,18 @@ class LList
             if (n < tmp.Next.Value && n >= tmp.Value)
             {
                 myLList.AddAfter(tmp, n);
-                return(tmp);
+                return tmp;
             }
         }
         if (n < tmp.Value)
+        {
             myLList.AddBefore(tmp, n);
+            return tmp;
+        }            
         else
+        {
             myLList.AddLast(n);
-        return myLList.Last;        
+            return myLList.Last;
+        }                    
     }
 }
