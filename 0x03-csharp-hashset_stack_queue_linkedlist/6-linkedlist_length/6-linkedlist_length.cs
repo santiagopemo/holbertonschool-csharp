@@ -1,12 +1,13 @@
 ﻿using System;
-
-namespace _6_linkedlist_length
+using System.Collections.Generic;
+class LList
 {
-    class Program
+    public static int Length(LinkedList<int> myLList)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        int count = 0;
+
+        foreach (int node in myLList)
+            count++;
+        return count;
     }
 }
