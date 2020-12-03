@@ -22,7 +22,7 @@ class LList
         if (n < tmp.Value)
         {
             myLList.AddBefore(tmp, n);
-            return tmp;
+            return tmp.Previous;
         }            
         else
         {
