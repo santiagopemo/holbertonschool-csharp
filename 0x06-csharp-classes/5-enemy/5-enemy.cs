@@ -36,7 +36,7 @@ namespace Enemies
          /// <summary>Prints the Zombie object’s attributes to stdout</summary>
         public override string ToString()
         {
-            return string.Format($"Zombie name: {name} / Total Health: {health}");
+            return string.Format("Zombie name: {0} / Total Health: {1}", name, health);
         }
     }
 }
