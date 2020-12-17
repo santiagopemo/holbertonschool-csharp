@@ -30,5 +30,13 @@ namespace Text.Tests
             int result = Str.CamelCase(s);
             Assert.AreEqual(1, result);
         }
+
+        [Test]
+        public void String_Null()
+        {
+            string s = null;
+            int result = Str.CamelCase(s);
+            Assert.AreEqual(0, result);
+        }
     }
 }

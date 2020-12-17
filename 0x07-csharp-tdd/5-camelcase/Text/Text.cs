@@ -11,7 +11,8 @@ namespace Text
         public static int CamelCase(string s)
         {
             int count = 0;
-
+            if (s == null)
+                return 0;
             for (int i = 0; i < s.Length; i++)
             {
                 if (count == 0)
