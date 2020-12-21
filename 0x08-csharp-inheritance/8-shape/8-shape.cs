@@ -1,12 +1,79 @@
 ﻿using System;
 
-namespace _8_shape
+/// <summary>Defines a shape</summary>
+class Shape
 {
-    class Program
+    /// <summary>Virtual method that Calculates a area</summary>
+    public virtual int Area()
     {
-        static void Main(string[] args)
+        throw new NotImplementedException("Area() is not implemented");
+    }
+}
+
+/// <summary>Defines a Rectangle Shape</summary>
+class Rectangle : Shape
+{
+    private int width;
+    private int height;
+
+    /// <summary>Property Width, Sets or Gets the value of width field</summary>
+    public int Width
+    {
+        get
         {
-            Console.WriteLine("Hello World!");
+            return this.width;
+        }
+        set
+        {
+            if (value < 0)
+                throw new ArgumentException("Width must be greater than or equal to 0");
+            this.width = value;
+        }
+    }
+    /// <summary>Property Height, Sets or Gets the value of heigt field</summary>
+    public int Height
+    {
+        get
+        {
+            return this.height;
+        }
+        set
+        {
+            if (value < 0)
+                throw new ArgumentException("Height must be greater than or equal to 0");
+            this.height = value;
+        }
+    }
+
+    /// <summary>Method that Calculates a area</summary>
+    public new int Area()
+    {
+        return this.width * this.height;
+    }
+
+    /// <summary>Method that returns a string representation of a Rectangle</summary>
+    public override string ToString()
+    {
+        return "[Rectangle] " + this.width + " / " + this.height;
+    }
+}
+
+/// <summary>Defines a Square Rectangle</summary>
+class Square : Rectangle
+{
+    private int size;
+    /// <summary>Property Size, Sets or Gets the value of size field</summary>
+    public int Size
+    {
+        get 
+        {
+            return this.size;
+        }
+        set
+        {
+            if (value < 0)
+                throw new ArgumentException("Size must be greater than or equal to 0");
+            this.size = value;
         }
     }
 }
