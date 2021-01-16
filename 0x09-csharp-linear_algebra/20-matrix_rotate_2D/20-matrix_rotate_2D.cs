@@ -8,22 +8,11 @@ class MatrixMath
     {
         if (matrix.GetLength(0) == 2 && matrix.GetLength(1) == 2)
         {
-            double[,] newMatrix = new double[2, 2];
-            double[,] rotationMatrix;
-            if (angle > 0)
-            {
-                rotationMatrix = new double[2, 2]{
-                    {Math.Cos(angle), -1 * Math.Sin(angle)},
-                    {Math.Sin(angle), Math.Cos(angle)}
-                };
-            }
-            else
-            {
-                rotationMatrix = new double[2, 2]{
-                    {Math.Cos(angle), Math.Sin(angle)},
-                    {-1 * Math.Sin(angle), Math.Cos(angle)}
-                };
-            }
+            double[,] newMatrix = new double[2, 2];            
+            double[,] rotationMatrix = {
+                {Math.Cos(angle), Math.Sin(angle)},
+                {-1 * Math.Sin(angle), Math.Cos(angle)}
+            };
 
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
