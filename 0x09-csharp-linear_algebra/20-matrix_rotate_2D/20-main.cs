@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    public static string MatrixToString(double[,] matrix)
+    static string MatrixToString(double[,] matrix)
     {
         int i, j;
         string output = string.Empty;
