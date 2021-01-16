@@ -14,11 +14,11 @@ class MatrixMath
                 {-1 * Math.Sin(angle), Math.Cos(angle)}
             };
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < matrix.GetLength(1); i++)
             {
-                for (int j = 0; j < 2; j++)
+                for (int j = 0; j < matrix.GetLength(0); j++)
                 {
-                    for (int x = 0; x < 2; x++)
+                    for (int x = 0; x < rotationMatrix.GetLength(1); x++)
                     {
                         newMatrix[j, x] = Math.Round(newMatrix[j, x] + (matrix[j, i] * rotationMatrix[i, x]), 2);
                     }
