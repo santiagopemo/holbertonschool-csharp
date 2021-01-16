@@ -1,12 +1,20 @@
 ﻿using System;
 
-namespace _25_matrix_transpose
+/// <summary>MatrixMath Class</summary>
+class MatrixMath
 {
-    class Program
+    /// <summary>Method to transpose a matrix and return the resulting matrix</summary>
+    public static double[,] Transpose(double[,] matrix)
     {
-        static void Main(string[] args)
+        double[,] tranposeMatrix = new double[matrix.GetLength(1), matrix.GetLength(0)];
+
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            Console.WriteLine("Hello World!");
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                tranposeMatrix[j, i] = matrix[i, j];
+            }
         }
+        return tranposeMatrix;
     }
 }
