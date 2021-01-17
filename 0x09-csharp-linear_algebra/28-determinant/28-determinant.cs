@@ -3,7 +3,7 @@
 /// <summary>MatrixMath Class</summary>
 class MatrixMath
 {
-    /// <summary>Method to transpose a matrix and return the resulting matrix</summary>
+    /// <summary>Method that calculates the determinant of a matrix</summary>
     public static double Determinant(double[,] matrix)
     {
         if (matrix.GetLength(0) == 2 && matrix.GetLength(1) == 2)
