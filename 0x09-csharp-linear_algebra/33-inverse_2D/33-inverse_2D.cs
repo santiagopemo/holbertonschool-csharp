@@ -11,10 +11,9 @@ class MatrixMath
             double determinant = matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
             if (determinant != 0)
             {
-                double k = 1 / determinant;
                 double[,] inverse = {
-                    {Math.Round(k * matrix[1, 1], 1), Math.Round(k * (-1) * matrix[0, 1], 1)}, 
-                    {Math.Round(k * (-1) * matrix[1, 0], 1), Math.Round(k * matrix[0, 0], 1)}
+                    { matrix[1, 1] / determinant,(-1) * matrix[0, 1] / determinant}, 
+                    {(-1) * matrix[1, 0] / determinant, matrix[0, 0] / determinant}
                 };
                 return inverse;
             }
