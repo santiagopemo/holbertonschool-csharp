@@ -12,8 +12,8 @@ class MatrixMath
             if (determinant != 0)
             {
                 double[,] inverse = {
-                    { matrix[1, 1] / determinant,(-1) * matrix[0, 1] / determinant}, 
-                    {(-1) * matrix[1, 0] / determinant, matrix[0, 0] / determinant}
+                    {Math.Round(matrix[1, 1] / determinant, 2), Math.Round((-1) * matrix[0, 1] / determinant, 2)}, 
+                    {Math.Round((-1) * matrix[1, 0] / determinant, 2), Math.Round(matrix[0, 0] / determinant, 2)}
                 };
                 return inverse;
             }
