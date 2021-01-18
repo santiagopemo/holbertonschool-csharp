@@ -13,8 +13,8 @@ class MatrixMath
             {
                 double k = 1 / determinant;
                 double[,] inverse = {
-                    {k * matrix[1, 1], k * (-1) * matrix[0, 1]}, 
-                    {k * (-1) * matrix[1, 0], k * matrix[0, 0]}
+                    {Math.Round(k * matrix[1, 1], 1), Math.Round(k * (-1) * matrix[0, 1], 1)}, 
+                    {Math.Round(k * (-1) * matrix[1, 0], 1), Math.Round(k * matrix[0, 0], 1)}
                 };
                 return inverse;
             }
