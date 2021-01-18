@@ -1,12 +1,25 @@
 ﻿using System;
 
-namespace _33_inverse_2D
+/// <summary>MatrixMath Class</summary>
+class MatrixMath
 {
-    class Program
+    /// <summary>Method that calculates the inverse of a 2D matrix and returns the resulting matrix</summary>
+    public static double[,] Inverse2D(double[,] matrix)
     {
-        static void Main(string[] args)
+        if (matrix.GetLength(0) == 2 && matrix.GetLength(1) == 2)
         {
-            Console.WriteLine("Hello World!");
+            double determinant = matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
+            if (determinant != 0)
+            {
+                double k = 1 / determinant;
+                double[,] inverse = {
+                    {k * matrix[1, 1], k * (-1) * matrix[0, 1]}, 
+                    {k * (-1) * matrix[1, 0], k * matrix[0, 0]}
+                };
+                return inverse;
+            }
         }
+        return new double[,] {{-1}};
     }
 }
+
