@@ -51,20 +51,43 @@ class ImageProcessor
     public static void Grayscale(string[] filenames)
     {
         Parallel.ForEach(filenames, (currentFile) => {
-            string grayscaleImageName = Path.GetFileNameWithoutExtension(currentFile) + "_grayscale" + Path.GetExtension(currentFile);
-            Bitmap imageBitmap = new Bitmap(currentFile);
+            string grayScaleImageName = Path.GetFileNameWithoutExtension(currentFile) + "_grayscale" + Path.GetExtension(currentFile);
+            // Create a new bitmap.
+            Bitmap bmp = new Bitmap(currentFile);
 
-            for (int x = 0; x < imageBitmap.Width; x++)
+            // Lock the bitmap's bits.  
+            Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            System.Drawing.Imaging.BitmapData bmpData =
+                bmp.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
+                bmp.PixelFormat);
+
+            // Get the address of the first line.
+            IntPtr ptr = bmpData.Scan0;
+
+            // Declare an array to hold the bytes of the bitmap.
+            int bytes  = Math.Abs(bmpData.Stride) * bmp.Height;
+            byte[] rgbValues = new byte[bytes];
+
+            // Copy the RGB values into the array.
+            System.Runtime.InteropServices.Marshal.Copy(ptr, rgbValues, 0, bytes);
+
+            // Set RGB values to grayscale.  
+            for (int counter = 2; counter < rgbValues.Length; counter += 3)
             {
-                for (int y = 0; y < imageBitmap.Height; y++)
-                {
-                    Color originalPixel = imageBitmap.GetPixel(x, y);
-                    int grayscale = (int)((originalPixel.R * .3) + (originalPixel.G * .59) + (originalPixel.B * .11));
-                    Color grayscalePixel = Color.FromArgb(grayscale, grayscale, grayscale);
-                    imageBitmap.SetPixel(x, y, grayscalePixel);
-                }
-            }
-            imageBitmap.Save(grayscaleImageName);
+                int grayscale = (int)(.11 * rgbValues[counter - 2] + .59 * rgbValues[counter - 1] + .3 * rgbValues[counter]);
+                rgbValues[counter - 2] = (byte) grayscale;
+                rgbValues[counter - 1] = (byte) grayscale;
+                rgbValues[counter] = (byte) grayscale;
+            }                
+
+            // Copy the RGB values back to the bitmap
+            System.Runtime.InteropServices.Marshal.Copy(rgbValues, 0, ptr, bytes);
+
+            // Unlock the bits.
+            bmp.UnlockBits(bmpData);
+
+            // Save the modified bitmap
+            bmp.Save(grayScaleImageName);
         });
     }
 
