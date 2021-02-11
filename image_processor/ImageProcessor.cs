@@ -13,25 +13,37 @@ class ImageProcessor
     {
         Parallel.ForEach(filenames, (currentFile) => {
             string invertedImageName = Path.GetFileNameWithoutExtension(currentFile) + "_inverse" + Path.GetExtension(currentFile);
-            Image originalImg = Image.FromFile(currentFile);
-            Bitmap invertedBmp = new Bitmap(originalImg.Width, originalImg.Height);
-            ImageAttributes attr = new ImageAttributes();
-            Graphics g = Graphics.FromImage(invertedBmp);
+            // Create a new bitmap.
+            Bitmap bmp = new Bitmap(currentFile);
 
-            ColorMatrix colorMatrix = new ColorMatrix(
-                new float[][]
-                {
-                    new float[] {-1, 0, 0, 0, 0},
-                    new float[] {0, -1, 0, 0, 0},
-                    new float[] {0, 0, -1, 0, 0},
-                    new float[] {0, 0, 0, 1, 0},
-                    new float[] {1, 1, 1, 0, 1},
-                }
-            );            
-            attr.SetColorMatrix(colorMatrix);
-            g.DrawImage(originalImg, new Rectangle(0, 0, originalImg.Width, originalImg.Height),
-                        0, 0, originalImg.Width, originalImg.Height, GraphicsUnit.Pixel, attr);
-            invertedBmp.Save(invertedImageName);
+            // Lock the bitmap's bits.  
+            Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            System.Drawing.Imaging.BitmapData bmpData =
+                bmp.LockBits(rect, System.Drawing.Imaging.ImageLockMode.ReadWrite,
+                bmp.PixelFormat);
+
+            // Get the address of the first line.
+            IntPtr ptr = bmpData.Scan0;
+
+            // Declare an array to hold the bytes of the bitmap.
+            int bytes  = Math.Abs(bmpData.Stride) * bmp.Height;
+            byte[] rgbValues = new byte[bytes];
+
+            // Copy the RGB values into the array.
+            System.Runtime.InteropServices.Marshal.Copy(ptr, rgbValues, 0, bytes);
+
+            // Invert every value 255 - byte value.  
+            for (int counter = 0; counter < rgbValues.Length; counter++)
+                rgbValues[counter] = (byte) (255 - rgbValues[counter]);
+
+            // Copy the RGB values back to the bitmap
+            System.Runtime.InteropServices.Marshal.Copy(rgbValues, 0, ptr, bytes);
+
+            // Unlock the bits.
+            bmp.UnlockBits(bmpData);
+
+            // Save the modified bitmap
+            bmp.Save(invertedImageName);
         });
     }
 
