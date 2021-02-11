@@ -1,9 +1,7 @@
 using System;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Drawing;
-using System.Drawing.Imaging;
 
 /// <summary>ImageProcessor Class</summary>
 class ImageProcessor
@@ -95,22 +93,6 @@ class ImageProcessor
     public static void BlackWhite(string[] filenames, double threshold)
     {
         Parallel.ForEach(filenames, (currentFile) => {
-            // string bwImageName = Path.GetFileNameWithoutExtension(currentFile) + "_bw" + Path.GetExtension(currentFile);
-            // Bitmap imageBitmap = new Bitmap(currentFile);
-
-            // for (int x = 0; x < imageBitmap.Width; x++)
-            // {
-            //     for (int y = 0; y < imageBitmap.Height; y++)
-            //     {
-            //         Color originalPixel = imageBitmap.GetPixel(x, y);
-            //         double luminance = ((originalPixel.R * .2126) + (originalPixel.G * .7152) + (originalPixel.B * .0722));
-            //         if (luminance >= threshold)
-            //             imageBitmap.SetPixel(x, y, Color.White);
-            //         else
-            //             imageBitmap.SetPixel(x, y, Color.Black);
-            //     }
-            // }
-            // imageBitmap.Save(bwImageName);
             string bwImageName = Path.GetFileNameWithoutExtension(currentFile) + "_bw" + Path.GetExtension(currentFile);
             // Create a new bitmap.
             Bitmap bmp = new Bitmap(currentFile);
