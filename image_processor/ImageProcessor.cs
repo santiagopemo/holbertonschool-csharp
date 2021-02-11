@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 /// <summary>ImageProcessor Class</summary>
 class ImageProcessor
@@ -12,17 +13,25 @@ class ImageProcessor
     {
         Parallel.ForEach(filenames, (currentFile) => {
             string invertedImageName = Path.GetFileNameWithoutExtension(currentFile) + "_inverse" + Path.GetExtension(currentFile);
-            Bitmap imageBitmap = new Bitmap(currentFile);
+            Image originalImg = Image.FromFile(currentFile);
+            Bitmap invertedBmp = new Bitmap(originalImg.Width, originalImg.Height);
+            ImageAttributes attr = new ImageAttributes();
+            Graphics g = Graphics.FromImage(invertedBmp);
 
-            for (int x = 0; x < imageBitmap.Width; x++)
-            {
-                for (int y = 0; y < imageBitmap.Height; y++)
+            ColorMatrix colorMatrix = new ColorMatrix(
+                new float[][]
                 {
-                    Color pixel = imageBitmap.GetPixel(x, y);
-                    imageBitmap.SetPixel(x, y, Color.FromArgb(255 - pixel.R, 255 - pixel.G, 255 - pixel.B));
+                    new float[] {-1, 0, 0, 0, 0},
+                    new float[] {0, -1, 0, 0, 0},
+                    new float[] {0, 0, -1, 0, 0},
+                    new float[] {0, 0, 0, 1, 0},
+                    new float[] {1, 1, 1, 0, 1},
                 }
-            }
-            imageBitmap.Save(invertedImageName);
+            );            
+            attr.SetColorMatrix(colorMatrix);
+            g.DrawImage(originalImg, new Rectangle(0, 0, originalImg.Width, originalImg.Height),
+                        0, 0, originalImg.Width, originalImg.Height, GraphicsUnit.Pixel, attr);
+            invertedBmp.Save(invertedImageName);
         });
     }
 
