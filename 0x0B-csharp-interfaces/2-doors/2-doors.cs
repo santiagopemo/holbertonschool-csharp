@@ -43,30 +43,17 @@ interface ICollectable
 
 
 
-///<summary>TestObject Class</summary>
-class TestObject : Base, IInteractive, IBreakable, ICollectable
+///<summary>Door Class</summary>
+class Door : Base, IInteractive
 {
-    ///<summary>Property durability</summary>
-    public int durability { get; set;}
-
-    ///<summary>Property isCollected</summary>
-    public bool isCollected { set; get; }
-
-    ///<summary>Method Interact with default implementation</summary>
+    ///<summary>Base Constructor</summary>
+    public Door(string name = "Door")
+    {
+        this.name = name;
+    }
+    ///<summary>Method Interact</summary>
     public void Interact()
     {
-        throw new NotImplementedException();
-    }
-
-    ///<summary>Method Break with default implementation</summary>
-    public void Break()
-    {
-        throw new NotImplementedException();
-    }
-
-    ///<summary>Method Collect with default implementation</summary>
-    public void Collect()
-    {
-        throw new NotImplementedException();
+        Console.WriteLine($"You try to open the {this.name}. It's locked.");
     }
 }
