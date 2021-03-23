@@ -5,7 +5,7 @@ public abstract class Base
 {
     ///<summary> name property </summary>
     private string name {get; set;}
-        ///<summary> String representation of the object </summary>
+    ///<summary> String representation of the object </summary>
     public override string ToString()
     {
         return $"{name} is a {this.GetType()}";
@@ -46,8 +46,8 @@ public class TestObject : Base, IInteractive, IBreakable, ICollectable{
     public string name {get; set;}
     ///<summary> overrider </summary>
     public void Interact(){} 
-        ///<summary> overrider </summary>
+    ///<summary> overrider </summary>
     public void Break(){}   
-        ///<summary> overrider </summary>
+    ///<summary> overrider </summary>
     public void Collect(){}
 }
