@@ -40,15 +40,14 @@ public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
     ///<summary>durability property</summary>
     public int durability {get; set;}
-    ///<summary> overrider </summary>
-    /// <value>Getter and setter</value>
+    ///<summary>isCollected property</summary>
     public bool isCollected {get; set;}
     ///<summary>name property</summary>
     public string name {get; set;}
-    ///<summary> overrider </summary>
+    ///<summary> Interact Method </summary>
     public void Interact() {} 
-    ///<summary> overrider </summary>
+    ///<summary>Break Method</summary>
     public void Break() {}   
-    ///<summary> overrider </summary>
+    ///<summary>Collect Method</summary>
     public void Collect() {}
 }
