@@ -8,7 +8,7 @@ public abstract class Base
 
     /// <summary>String representation of a Base object</summary>
     /// <returns>A string</returns>
-    public override string ToString() => $"{name} is a {GetType().Name}";
+    public override string ToString() => $"{name} is a {GetType()}";
 }
 
 /// <summary>Interactive interface</summary>
