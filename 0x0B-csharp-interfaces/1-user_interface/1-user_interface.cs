@@ -14,7 +14,7 @@ abstract class Base
 }
 
 ///<summary>IInteractive Interface</summary>
-interface IInteractive
+public interface IInteractive
 {
     ///<summary>Delcaration of method Interact</summary>
 
@@ -22,7 +22,7 @@ interface IInteractive
 }
 
 ///<summary>IBreakable Interface</summary>
-interface IBreakable
+public interface IBreakable
 {
     ///<summary>Delcaration of property durability</summary>
     int durability { set; get; }
@@ -32,7 +32,7 @@ interface IBreakable
 }
 
 ///<summary>ICollectable Interface</summary>
-interface ICollectable
+public interface ICollectable
 {
     ///<summary>Delcaration of property isCollected</summary>
     bool isCollected { set; get; }
@@ -44,7 +44,7 @@ interface ICollectable
 
 
 ///<summary>TestObject Class</summary>
-class TestObject : IInteractive, IBreakable, ICollectable
+class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
     ///<summary>Property durability</summary>
     public int durability { get; set;}
