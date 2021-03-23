@@ -41,8 +41,6 @@ public interface ICollectable
     void Collect();
 }
 
-
-
 ///<summary>TestObject Class</summary>
 public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
@@ -53,20 +51,11 @@ public class TestObject : Base, IInteractive, IBreakable, ICollectable
     public bool isCollected { get; set; }
 
     ///<summary>Method Interact with default implementation</summary>
-    public void Interact()
-    {
-        throw new NotImplementedException();
-    }
+    public void Interact() { }
 
     ///<summary>Method Break with default implementation</summary>
-    public void Break()
-    {
-        throw new NotImplementedException();
-    }
+    public void Break() { }
 
     ///<summary>Method Collect with default implementation</summary>
-    public void Collect()
-    {
-        throw new NotImplementedException();
-    }
+    public void Collect() { }
 }
