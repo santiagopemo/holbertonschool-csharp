@@ -5,55 +5,62 @@
     </assembly>
     <members>
         <member name="T:Base">
-            <summary>Base Class</summary>
+            <summary> base class </summary>
         </member>
         <member name="P:Base.name">
-            <summary>Property name</summary>
+            <summary> overrider </summary>
         </member>
         <member name="M:Base.ToString">
-            <summary>Returns the string representation of a Base object</summary>
+            <summary> overrider </summary>
         </member>
         <member name="T:IInteractive">
-            <summary>IInteractive Interface</summary>
+            <summary> overrider </summary>
         </member>
         <member name="M:IInteractive.Interact">
-            <summary>Delcaration of method Interact</summary>
+            <summary> overrider </summary>
         </member>
         <member name="T:IBreakable">
-            <summary>IBreakable Interface</summary>
+            <summary> overrider </summary>
         </member>
         <member name="P:IBreakable.durability">
-            <summary>Delcaration of property durability</summary>
+            <summary> overrider </summary>
+             <value>Getter and setter</value>
         </member>
         <member name="M:IBreakable.Break">
-            <summary>Delcaration of method Break</summary>
+            <summary> overrider </summary>
         </member>
         <member name="T:ICollectable">
-            <summary>ICollectable Interface</summary>
+            <summary> overrider </summary>
         </member>
         <member name="P:ICollectable.isCollected">
-            <summary>Delcaration of property isCollected</summary>
+            <summary> overrider </summary>
+             <value>Getter and setter</value>
         </member>
         <member name="M:ICollectable.Collect">
-            <summary>Delcaration of method Collect</summary>
+            <summary> overrider </summary>
         </member>
         <member name="T:TestObject">
-            <summary>TestObject Class</summary>
+            <summary> overrider </summary>
         </member>
         <member name="P:TestObject.durability">
-            <summary>Property durability</summary>
+            <summary> overrider </summary>
+             <value>Getter and setter</value>
         </member>
         <member name="P:TestObject.isCollected">
-            <summary>Property isCollected</summary>
+            <summary> overrider </summary>
+             <value>Getter and setter</value>
+        </member>
+        <member name="P:TestObject.name">
+            <summary>  override </summary>
         </member>
         <member name="M:TestObject.Interact">
-            <summary>Method Interact with default implementation</summary>
+            <summary> overrider </summary>
         </member>
         <member name="M:TestObject.Break">
-            <summary>Method Break with default implementation</summary>
+            <summary> overrider </summary>
         </member>
         <member name="M:TestObject.Collect">
-            <summary>Method Collect with default implementation</summary>
+            <summary> overrider </summary>
         </member>
     </members>
 </doc>
