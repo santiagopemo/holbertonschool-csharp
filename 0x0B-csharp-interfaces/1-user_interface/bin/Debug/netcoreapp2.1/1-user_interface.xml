@@ -5,58 +5,7 @@
     </assembly>
     <members>
         <member name="T:Base">
-            <summary>Base Class</summary>
-        </member>
-        <member name="P:Base.name">
-            <summary>Property name</summary>
-        </member>
-        <member name="M:Base.ToString">
-            <summary>Returns the string representation of a Base object</summary>
-        </member>
-        <member name="T:IInteractive">
-            <summary>IInteractive Interface</summary>
-        </member>
-        <member name="M:IInteractive.Interact">
-            <summary>Delcaration of method Interact</summary>
-        </member>
-        <member name="T:IBreakable">
-            <summary>IBreakable Interface</summary>
-        </member>
-        <member name="P:IBreakable.durability">
-            <summary>Delcaration of property durability</summary>
-        </member>
-        <member name="M:IBreakable.Break">
-            <summary>Delcaration of method Break</summary>
-        </member>
-        <member name="T:ICollectable">
-            <summary>ICollectable Interface</summary>
-        </member>
-        <member name="P:ICollectable.isCollected">
-            <summary>Delcaration of property isCollected</summary>
-        </member>
-        <member name="M:ICollectable.Collect">
-            <summary>Delcaration of method Collect</summary>
-        </member>
-        <member name="T:TestObject">
-            <summary>TestObject Class</summary>
-        </member>
-        <member name="P:TestObject.durability">
-            <summary>Property durability</summary>
-        </member>
-        <member name="P:TestObject.isCollected">
-            <summary>Property isCollected</summary>
-        </member>
-        <member name="P:TestObject.name">
-            <summary>Property isCollected</summary>
-        </member>
-        <member name="M:TestObject.Interact">
-            <summary>Method Interact with default implementation</summary>
-        </member>
-        <member name="M:TestObject.Break">
-            <summary>Method Break with default implementation</summary>
-        </member>
-        <member name="M:TestObject.Collect">
-            <summary>Method Collect with default implementation</summary>
+            <summary> Base class </summary>
         </member>
     </members>
 </doc>
