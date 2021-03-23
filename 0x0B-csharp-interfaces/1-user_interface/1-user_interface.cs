@@ -24,23 +24,21 @@ public interface IBreakable
 {
     ///<summary>durability property</summary>
     int durability {get; set;}
-    ///<summary> overrider </summary>
+    ///<summary>Break method</summary>
     void Break();
 }
-///<summary> overrider </summary>
+///<summary>ICollectable interface</summary>
 public interface ICollectable
 {
-    ///<summary> overrider </summary>
-    /// <value>Getter and setter</value>
+    ///<summary>isCollected property</summary>
     bool isCollected {get; set;}
-    ///<summary> overrider </summary>
+    ///<summary>Collect method</summary>
     void Collect();
 }
 ///<summary> overrider </summary>
 public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
     ///<summary> overrider </summary>
-    /// <value>Getter and setter</value>
     public int durability {get; set;}
     ///<summary> overrider </summary>
     /// <value>Getter and setter</value>
