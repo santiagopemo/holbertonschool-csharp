@@ -1,61 +1,58 @@
 ﻿using System;
 
-///<summary>Base Class</summary>
+/// <summary>Base class</summary>
 public abstract class Base
 {
-    ///<summary>Property name</summary>
+    /// <summary>Name property</summary>
     public string name { get; set; }
 
-    ///<summary>Returns the string representation of a Base object</summary>
-    public override string ToString()
-    {
-        return $"{this.name} is a {this.GetType().Name}";
-    }
+    /// <summary>String representation of a Base object</summary>
+    /// <returns>A string</returns>
+    public override string ToString() => $"{name} is a {GetType().Name}";
 }
 
-///<summary>IInteractive Interface</summary>
+/// <summary>Interactive interface</summary>
 public interface IInteractive
 {
-    ///<summary>Delcaration of method Interact</summary>
-
+    /// <summary>Interact method</summary>
     void Interact();
 }
 
-///<summary>IBreakable Interface</summary>
+/// <summary>Breackable interface</summary>
 public interface IBreakable
 {
-    ///<summary>Delcaration of property durability</summary>
+    /// <summary>Durability property</summary>
     int durability { get; set; }
 
-    ///<summary>Delcaration of method Break</summary>
+    /// <summary>Break method</summary>
     void Break();
 }
 
-///<summary>ICollectable Interface</summary>
+/// <summary>Collectable interface</summary>
 public interface ICollectable
 {
-    ///<summary>Delcaration of property isCollected</summary>
+    /// <summary>IsCollected Property</summary>
     bool isCollected { get; set; }
 
-    ///<summary>Delcaration of method Collect</summary>
+    /// <summary>Collect method</summary>
     void Collect();
 }
 
-///<summary>TestObject Class</summary>
+/// <summary>TestObject class</summary>
 public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
-    ///<summary>Property durability</summary>
-    public int durability { get; set;}
-
-    ///<summary>Property isCollected</summary>
-    public bool isCollected { get; set; }
-
-    ///<summary>Method Interact with default implementation</summary>
+    /// <summary>Interact method</summary>
     public void Interact() { }
 
-    ///<summary>Method Break with default implementation</summary>
+    /// <summary>Durability property</summary>
+    public int durability { get; set; }
+
+    /// <summary>Break method</summary>
     public void Break() { }
 
-    ///<summary>Method Collect with default implementation</summary>
+    /// <summary>IsCollected Property</summary>
+    public bool isCollected { get; set; }
+
+    /// <summary>Collect method</summary>
     public void Collect() { }
 }
