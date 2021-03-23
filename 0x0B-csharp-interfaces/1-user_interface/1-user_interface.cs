@@ -14,12 +14,14 @@ public abstract class Base
 
 
     ///<summary> IInteractive </summary>
-public interface IInteractive {
+public interface IInteractive
+{
         ///<summary> overrider </summary>
     void Interact();
 }
     ///<summary> overrider </summary>
-public interface IBreakable{
+public interface IBreakable
+{
     ///<summary> overrider </summary>
     /// <value>Getter and setter</value>
     int durability {get; set;}
@@ -27,7 +29,8 @@ public interface IBreakable{
     void Break();
 }
     ///<summary> overrider </summary>
-public interface ICollectable{
+public interface ICollectable
+{
     ///<summary> overrider </summary>
     /// <value>Getter and setter</value>
     bool isCollected {get; set;}
@@ -35,7 +38,8 @@ public interface ICollectable{
     void Collect();
 }
 ///<summary> overrider </summary>
-public class TestObject : Base, IInteractive, IBreakable, ICollectable{
+public class TestObject : Base, IInteractive, IBreakable, ICollectable
+{
     ///<summary> overrider </summary>
     /// <value>Getter and setter</value>
     public int durability {get; set;}
@@ -45,9 +49,9 @@ public class TestObject : Base, IInteractive, IBreakable, ICollectable{
     ///<summary>  override </summary>
     public string name {get; set;}
     ///<summary> overrider </summary>
-    public void Interact(){} 
+    public void Interact() {} 
     ///<summary> overrider </summary>
-    public void Break(){}   
+    public void Break() {}   
     ///<summary> overrider </summary>
-    public void Collect(){}
+    public void Collect() {}
 }
