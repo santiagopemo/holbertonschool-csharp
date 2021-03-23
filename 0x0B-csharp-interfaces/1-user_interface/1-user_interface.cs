@@ -44,7 +44,7 @@ interface ICollectable
 
 
 ///<summary>TestObject Class</summary>
-class TestObject : Base, IInteractive, IBreakable, ICollectable
+class TestObject : IInteractive, IBreakable, ICollectable
 {
     ///<summary>Property durability</summary>
     public int durability { get; set;}
@@ -55,18 +55,18 @@ class TestObject : Base, IInteractive, IBreakable, ICollectable
     ///<summary>Method Interact with default implementation</summary>
     public void Interact()
     {
-        
+        throw new NotImplementedException();
     }
 
     ///<summary>Method Break with default implementation</summary>
     public void Break()
     {
-        
+        throw new NotImplementedException();
     }
 
     ///<summary>Method Collect with default implementation</summary>
     public void Collect()
     {
-        
+        throw new NotImplementedException();
     }
 }
