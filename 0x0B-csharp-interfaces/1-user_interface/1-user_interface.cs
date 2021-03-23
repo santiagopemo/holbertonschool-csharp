@@ -35,15 +35,15 @@ public interface ICollectable
     ///<summary>Collect method</summary>
     void Collect();
 }
-///<summary> overrider </summary>
+///<summary>TestObject Class</summary>
 public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
-    ///<summary> overrider </summary>
+    ///<summary>durability property</summary>
     public int durability {get; set;}
     ///<summary> overrider </summary>
     /// <value>Getter and setter</value>
     public bool isCollected {get; set;}
-    ///<summary>  override </summary>
+    ///<summary>name property</summary>
     public string name {get; set;}
     ///<summary> overrider </summary>
     public void Interact() {} 
