@@ -1,7 +1,7 @@
 ﻿using System;
 
 ///<summary>Base Class</summary>
-abstract class Base
+public abstract class Base
 {
     ///<summary>Property name</summary>
     public string name { set; get; }
@@ -44,7 +44,7 @@ public interface ICollectable
 
 
 ///<summary>TestObject Class</summary>
-class TestObject : Base, IInteractive, IBreakable, ICollectable
+public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
     ///<summary>Property durability</summary>
     public int durability { get; set;}
