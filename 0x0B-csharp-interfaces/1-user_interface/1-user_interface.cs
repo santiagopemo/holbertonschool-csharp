@@ -42,7 +42,8 @@
         ///<summary> overrider </summary>
         /// <value>Getter and setter</value>
         public bool isCollected {get; set;}
-        
+        ///<summary>  override </summary>
+        public string name {get; set;}
         ///<summary> overrider </summary>
         public void Interact(){
             // Method implementation.
