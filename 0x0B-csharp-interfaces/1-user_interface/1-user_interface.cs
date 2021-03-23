@@ -20,24 +20,24 @@ public interface IInteractive {
 }
     ///<summary> overrider </summary>
 public interface IBreakable{
-        ///<summary> overrider </summary>
-        /// <value>Getter and setter</value>
-        int durability {get; set;}
-        ///<summary> overrider </summary>
-        void Break();
+    ///<summary> overrider </summary>
+    /// <value>Getter and setter</value>
+    int durability {get; set;}
+    ///<summary> overrider </summary>
+    void Break();
 }
     ///<summary> overrider </summary>
 public interface ICollectable{
-        ///<summary> overrider </summary>
-        /// <value>Getter and setter</value>
+    ///<summary> overrider </summary>
+    /// <value>Getter and setter</value>
     bool isCollected {get; set;}
-        ///<summary> overrider </summary>
+    ///<summary> overrider </summary>
     void Collect();
 }
-    ///<summary> overrider </summary>
+///<summary> overrider </summary>
 public class TestObject : Base, IInteractive, IBreakable, ICollectable{
-        ///<summary> overrider </summary>
-        /// <value>Getter and setter</value>
+    ///<summary> overrider </summary>
+    /// <value>Getter and setter</value>
     public int durability {get; set;}
     ///<summary> overrider </summary>
     /// <value>Getter and setter</value>
@@ -45,15 +45,9 @@ public class TestObject : Base, IInteractive, IBreakable, ICollectable{
     ///<summary>  override </summary>
     public string name {get; set;}
     ///<summary> overrider </summary>
-    public void Interact(){
-        // Method implementation.
-    } 
+    public void Interact(){} 
         ///<summary> overrider </summary>
-    public void Break(){
-        // Method implementation.
-    }   
+    public void Break(){}   
         ///<summary> overrider </summary>
-    public void Collect(){
-        // Method implementation.
-    }
+    public void Collect(){}
 }
