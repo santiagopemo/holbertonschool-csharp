@@ -13,22 +13,21 @@ public abstract class Base
 }
 
 
-    ///<summary> IInteractive </summary>
+///<summary>IInteractive interface</summary>
 public interface IInteractive
 {
-        ///<summary> overrider </summary>
+    ///<summary>Interact method</summary>
     void Interact();
 }
-    ///<summary> overrider </summary>
+///<summary>IBreakable interface</summary>
 public interface IBreakable
 {
-    ///<summary> overrider </summary>
-    /// <value>Getter and setter</value>
+    ///<summary>durability property</summary>
     int durability {get; set;}
     ///<summary> overrider </summary>
     void Break();
 }
-    ///<summary> overrider </summary>
+///<summary> overrider </summary>
 public interface ICollectable
 {
     ///<summary> overrider </summary>
