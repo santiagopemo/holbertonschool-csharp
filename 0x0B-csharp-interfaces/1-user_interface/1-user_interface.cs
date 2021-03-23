@@ -4,7 +4,7 @@
 public abstract class Base
 {
     ///<summary>Property name</summary>
-    public string name { set; get; }
+    public string name { get; set; }
 
     ///<summary>Returns the string representation of a Base object</summary>
     public override string ToString()
@@ -25,7 +25,7 @@ public interface IInteractive
 public interface IBreakable
 {
     ///<summary>Delcaration of property durability</summary>
-    int durability { set; get; }
+    int durability { get; set; }
 
     ///<summary>Delcaration of method Break</summary>
     void Break();
@@ -35,7 +35,7 @@ public interface IBreakable
 public interface ICollectable
 {
     ///<summary>Delcaration of property isCollected</summary>
-    bool isCollected { set; get; }
+    bool isCollected { get; set; }
 
     ///<summary>Delcaration of method Collect</summary>
     void Collect();
@@ -50,7 +50,7 @@ public class TestObject : Base, IInteractive, IBreakable, ICollectable
     public int durability { get; set;}
 
     ///<summary>Property isCollected</summary>
-    public bool isCollected { set; get; }
+    public bool isCollected { get; set; }
 
     ///<summary>Method Interact with default implementation</summary>
     public void Interact()
