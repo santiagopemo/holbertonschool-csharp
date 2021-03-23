@@ -8,7 +8,7 @@ public abstract class Base
     ///<summary>String representation of the object</summary>
     public override string ToString()
     {
-        return $"{name} is a {this.GetType().Name}";
+        return $"{this.name} is a {this.GetType().Name}";
     }
 }
 
