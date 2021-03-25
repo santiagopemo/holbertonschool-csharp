@@ -130,8 +130,7 @@ class Player
             Console.WriteLine("Health is low!");
         }
         Console.ResetColor();
-        HPCheck -= HPValueWarning;
-        
+        HPCheck -= HPValueWarning;        
     }
     // Method that checks currentHP
     private void OnCheckStatus(CurrentHPArgs e)
