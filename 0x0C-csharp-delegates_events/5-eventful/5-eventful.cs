@@ -120,8 +120,7 @@ class Player
     private void HPValueWarning(object sender, CurrentHPArgs e)
     {        
         if (e.currentHp == 0)
-        {
-            
+        {            
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Health has reached zero!");
         }            
