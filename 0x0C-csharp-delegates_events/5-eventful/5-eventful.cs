@@ -135,7 +135,6 @@ class Player
         
     }
     // Method that checks currentHP
-
     private void OnCheckStatus(CurrentHPArgs e)
     {
         if (e.currentHp <= (this.maxHp / 4.0f))
